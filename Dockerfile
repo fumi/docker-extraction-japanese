@@ -11,8 +11,9 @@ RUN mvn clean install
 
 WORKDIR core
 RUN ../run download-ontology
-RUN ../run download-mappings
-RUN ../run generate-settings
+# Disabled because the download-mappings process is often stuck 
+#RUN ../run download-mappings
+#RUN ../run generate-settings
 
 WORKDIR ../dump
 COPY *.properties .
