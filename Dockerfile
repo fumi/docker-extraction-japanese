@@ -16,7 +16,8 @@ RUN ../run download-ontology
 #RUN ../run generate-settings
 
 WORKDIR ../dump
-COPY *.properties .
+COPY download.ja.properties .
+COPY extraction.ja.properties .
 
 WORKDIR /work
 
