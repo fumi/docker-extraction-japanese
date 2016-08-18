@@ -1,5 +1,6 @@
 FROM fumihiro/maven
 MAINTAINER Fumihiro Kato <fumi@fumi.me>
+LABEL version="0.0.1"
 
 RUN mkdir -p /work /data
 WORKDIR /work
