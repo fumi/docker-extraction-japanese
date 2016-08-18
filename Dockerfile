@@ -21,7 +21,7 @@ COPY extraction.ja.properties .
 
 WORKDIR /work
 
-VOLUME["/data"]
+VOLUME ["/data"]
 
 ENTRYPOINT ["run.sh"]
 CMD ["--help"]
