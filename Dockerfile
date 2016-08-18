@@ -1,7 +1,7 @@
 FROM fumihiro/maven
 MAINTAINER Fumihiro Kato <fumi@fumi.me>
 
-RUN mkdir -p /work
+RUN mkdir -p /work /data
 WORKDIR /work
 COPY run.sh .
 RUN git clone -b develop-ja https://github.com/fumi/extraction-framework.git
