@@ -5,6 +5,7 @@ LABEL version="0.0.1"
 RUN mkdir -p /work /data
 WORKDIR /work
 COPY run.sh .
+RUN chmod +x run.sh
 RUN git clone -b develop-ja https://github.com/fumi/extraction-framework.git
 
 WORKDIR extraction-framework
