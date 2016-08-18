@@ -13,8 +13,8 @@ RUN mvn clean install
 WORKDIR core
 RUN ../run download-ontology
 # Disabled because the download-mappings process is often stuck 
-#RUN ../run download-mappings
-#RUN ../run generate-settings
+RUN ../run download-mappings
+RUN ../run generate-settings
 
 WORKDIR ../dump
 COPY download.ja.properties .
@@ -24,5 +24,5 @@ WORKDIR /work
 
 VOLUME ["/data"]
 
-ENTRYPOINT ["run.sh"]
+ENTRYPOINT ["/work/run.sh"]
 CMD ["--help"]
