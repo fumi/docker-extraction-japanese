@@ -1,9 +1,16 @@
 #!/bin/bash -eu
 
-DUMP_DIR="/work/extraction-framework/dump"
+EXTRACTION_DIR="/work/extraction-framework"
+CORE_DIR="$EXTRACTION_DIR/core"
+DUMP_DIR="$EXTRACTION_DIR/dump"
+
+prepare() {
+  cd $CORE_DIR &> /dev/null
+  ../run download-mappings
+}
 
 download() {
-  cd $DUMP_DIR
+  cd $DUMP_DIR &> /dev/null
   ../run download config=download.ja.properties
 }
 
@@ -19,8 +26,12 @@ shift
 
 case $RUN_CMD in
     all)
+        prepare
         download
         extract
+    ;;
+    prepare)
+        prepare
     ;;
     download)
         download
