@@ -2,9 +2,6 @@
 
 DUMP_DIR="/work/extraction-framework/dump"
 
-error() {
-}
-
 download() {
   pushd DUMP_DIR &> /dev/null
   ../run download config=download.ja.properties
