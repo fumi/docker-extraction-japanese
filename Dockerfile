@@ -1,6 +1,6 @@
 FROM fumihiro/maven
 MAINTAINER Fumihiro Kato <fumi@fumi.me>
-LABEL version="0.0.1"
+LABEL version="0.1.0"
 
 RUN mkdir -p /work /data
 WORKDIR /work
@@ -18,12 +18,7 @@ RUN ../run download-ontology
 #RUN ../run generate-settings
 
 WORKDIR ../dump
-COPY download.ja.properties .
-COPY extraction.ja.properties .
-
-WORKDIR /work
-
-VOLUME ["/data"]
+COPY *.properties ./
 
 ENTRYPOINT ["/work/run.sh"]
 CMD ["--help"]

@@ -3,15 +3,13 @@
 DUMP_DIR="/work/extraction-framework/dump"
 
 download() {
-  pushd DUMP_DIR &> /dev/null
+  cd $DUMP_DIR
   ../run download config=download.ja.properties
-  popd &> /dev/null
 }
 
 extract() {
-  pushd DUMP_DIR &> /dev/null
+  cd $DUMP_DIR &> /dev/null
   ../run extract extraction.ja.properties
-  popd &> /dev/null
 }
 
 
