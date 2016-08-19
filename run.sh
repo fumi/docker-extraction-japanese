@@ -6,6 +6,7 @@ DUMP_DIR="$EXTRACTION_DIR/dump"
 
 prepare() {
   cd $CORE_DIR &> /dev/null
+  ../run download-ontology
   ../run download-mappings
 }
 
@@ -26,17 +27,18 @@ shift
 
 case $RUN_CMD in
     all)
-        prepare
         download
-        extract
-    ;;
-    prepare)
         prepare
+        extract
     ;;
     download)
         download
     ;;
     extract)
+        extract
+    ;;
+    prepare-and-extract)
+        prepare
         extract
     ;;
     *)
